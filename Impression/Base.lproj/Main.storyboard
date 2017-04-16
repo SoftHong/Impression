@@ -22,16 +22,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ktU-Qa-eMs">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vincent-guth-182001.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ktU-Qa-eMs">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="535"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="unb-Ot-0p1">
-                                <rect key="frame" x="16" y="495" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="unb-Ot-0p1">
+                                <rect key="frame" x="16" y="495" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="4im-1y-hXW"/>
+                                    <constraint firstAttribute="height" constant="30" id="vTf-or-eTN"/>
+                                </constraints>
+                                <state key="normal" title="rgb" image="rgb.png"/>
+                                <connections>
+                                    <action selector="onRgbButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ou1-i5-OPz"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4v-GZ-jU9">
-                                <rect key="frame" x="164" y="495" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4v-GZ-jU9">
+                                <rect key="frame" x="162" y="480" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="c0b-MT-q0L"/>
+                                    <constraint firstAttribute="width" constant="50" id="etE-tn-y7z"/>
+                                </constraints>
+                                <state key="normal" title="camera" image="photo-camera.png"/>
+                                <connections>
+                                    <action selector="onCameraButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QAC-SU-iUH"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="snp-YI-c4v">
                                 <rect key="frame" x="0.0" y="535" width="375" height="132"/>
@@ -40,9 +54,16 @@
                                     <constraint firstAttribute="height" constant="132" id="4Oi-XV-o2Q"/>
                                 </constraints>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Tl-Dl-fb5">
-                                <rect key="frame" x="313" y="495" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Tl-Dl-fb5">
+                                <rect key="frame" x="329" y="495" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="XzL-pT-fBF"/>
+                                    <constraint firstAttribute="height" constant="30" id="sCH-To-Ac9"/>
+                                </constraints>
+                                <state key="normal" title="album" image="album.png"/>
+                                <connections>
+                                    <action selector="onAlbumButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B3a-bh-4ZP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -58,11 +79,12 @@
                             <constraint firstItem="snp-YI-c4v" firstAttribute="top" secondItem="ktU-Qa-eMs" secondAttribute="bottom" id="k2U-jH-GiH"/>
                             <constraint firstAttribute="trailing" secondItem="ktU-Qa-eMs" secondAttribute="trailing" id="qqJ-wu-Pl6"/>
                             <constraint firstItem="3Tl-Dl-fb5" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="sEd-JC-CyU"/>
-                            <constraint firstItem="snp-YI-c4v" firstAttribute="top" secondItem="A4v-GZ-jU9" secondAttribute="bottom" constant="10" id="syP-4v-9kG"/>
+                            <constraint firstItem="snp-YI-c4v" firstAttribute="top" secondItem="A4v-GZ-jU9" secondAttribute="bottom" constant="5" id="syP-4v-9kG"/>
                             <constraint firstAttribute="trailing" secondItem="snp-YI-c4v" secondAttribute="trailing" id="t3s-q0-DIa"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="ktU-Qa-eMs" id="hH0-cC-5GB"/>
                         <outlet property="tableView" destination="snp-YI-c4v" id="sCe-e2-YgJ"/>
                     </connections>
                 </viewController>
@@ -71,4 +93,10 @@
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="album.png" width="64" height="64"/>
+        <image name="photo-camera.png" width="64" height="64"/>
+        <image name="rgb.png" width="64" height="64"/>
+        <image name="vincent-guth-182001.jpg" width="683" height="1024"/>
+    </resources>
 </document>
